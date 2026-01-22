@@ -1,18 +1,25 @@
 # 🔐 Security Model
 
-## Host-Level
+ This homelab follows a **Zero-trust, VPN-first security design**.
+
+## Access Control
+- No direct public access to services
+- All access via WireGuard VPN
+- Firewall restricts ports strictly
+
+## Host-Level Protection
 - WireGuard VPN
 - UFW Firewall
-- Fail2Ban
-- CrowdSec
+- Fail2Ban for brute-force protection
+- CrowdSec for behaviour-based blocking
 
-## Identity
-- Authentik (SSO + 2FA)
+## Identity & Authentication
+- Authentik (SSO + 2FA) 
 
-## Secrets
-- Vaultwarden
-- No secrets committed to GitHub
+## Secrets Management
+- Vaultwarden stores passwords, API tokens, recovery codes
+- No secrets are committed to GitHub
 
-## DNS
-- Pi-Hole
-- Cloudflare DNS
+## DNS & edge
+- Pi-Hole blocks ads, trackers, and malware
+- Cloudflare manages DNS and domain records

@@ -1,33 +1,50 @@
-# Homelab Architecture
+# 🏦 Homelab Architecture
 
-## Access Flow
+## Traffic Flow
 
-Internet
-  ❌
-  |
+  Internet
+    
+    |
+
+  [ Cloudflare DNS ]
+    
+    |
+
+  ❌ (No direct access)
+    
+    |
+
   [ WireGuard VPN ]
 
-  |
+    |
 
   [ Firewall (UFW) ]
 
-  |
+    |
 
   [ CrowdSec + Fail2Ban ]
 
-  |
+    |
 
   [ Nginx Proxy Manager ]
 
-  |
+    |
 
-  [ Authentik SSO ]
+  [ Authentik SSO + 2FA ]
 
-  |
+    |
 
-  ----------------------------------
+  ------------------------------------------
 
-  | Nextcloud | Jellyfin | Immich |
-  | Syncthing | Vaultwarder | ARR |
-  
-  ----------------------------------
+  | Vaultwarden | Nextcloud | Syncthing    |
+  | Immich      | Paperless | Jellyfin     |
+  | Bookstack   | FreshRSS  | ARR services |
+  ------------------------------------------
+
+    |
+
+  [ Pi-Hole DNS ]
+    
+    |
+    
+  [ Encrypted Backups ]
