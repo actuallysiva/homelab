@@ -1,3 +1,13 @@
+# Secrets
 .env
 *.key
+*.pem
 secrets/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
